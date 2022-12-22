@@ -1,7 +1,19 @@
 ---
+import Navigation from "../components/Navigation.astro";
+
+import "../styles/global.css";
+
+import Footer from "../components/Footer.astro";
+
 const pageTitle = "My Astro Learning ";
+
+import { Baselayout } from "../layouts/baselayout.astro";
 ---
 
+<!-- <BaseLayout>
+  pageTitle={pageTitle}
+  <h2>My awesome blog subtitle</h2>
+</BaseLayout> -->
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -10,11 +22,21 @@ const pageTitle = "My Astro Learning ";
     <meta name="generator" content={Astro.generator} />
     <title>Portfolio</title>
   </head>
+
   <body>
-    <a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/blog/">blog</a>
+    <Navigation />
+
     <h1>{pageTitle}</h1>
     <h1>My astro site</h1>
+    <style>
+      h1 {
+        color: purple;
+        font-size: 4rem;
+      }
+    </style>
+    <Footer />
+    <script>
+      import "../scripts/menu.js";
+    </script>
   </body>
 </html>
